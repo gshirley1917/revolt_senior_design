@@ -1,0 +1,10 @@
+# build directories
+*_node.X/build/*
+
+# dist directories
+*_node.X/dist/*
+
+# nbproject directories
+*_node.X/nbproject/Makefile-*
+*_node.X/nbproject/Package-*
+*_node.X/nbproject/private/*
