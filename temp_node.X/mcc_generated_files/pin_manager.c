@@ -13,11 +13,11 @@
   Description:
     This header file provides implementations for pin APIs for all pins selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.5
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.6
         Device            :  PIC18F26K83
         Driver Version    :  2.11
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.20 and above
+        Compiler          :  XC8 2.30 and above
         MPLAB             :  MPLAB X 5.40
 
     Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
@@ -66,14 +66,14 @@ void PIN_MANAGER_Initialize(void)
     */
     TRISA = 0xFF;
     TRISB = 0xDF;
-    TRISC = 0xBE;
+    TRISC = 0xFF;
 
     /**
     ANSELx registers
     */
-    ANSELC = 0x41;
+    ANSELC = 0xFF;
     ANSELB = 0xEF;
-    ANSELA = 0xF0;
+    ANSELA = 0xFF;
 
     /**
     WPUx registers
@@ -112,12 +112,8 @@ void PIN_MANAGER_Initialize(void)
    
     
 	
-    U2RXPPS = 0x11;   //RC1->UART2:RX2;    
-    RC0PPS = 0x16;   //RC0->UART2:TX2;    
     RB5PPS = 0x33;   //RB5->ECAN:CANTX0;    
     CANRXPPS = 0x0C;   //RB4->ECAN:CANRX;    
-    RC6PPS = 0x13;   //RC6->UART1:TX1;    
-    U1RXPPS = 0x17;   //RC7->UART1:RX1;    
 }
   
 void PIN_MANAGER_IOC(void)

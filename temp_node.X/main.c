@@ -1,24 +1,21 @@
 /**
-  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Header File
+  Generated Main Source File
 
-  @Company:
+  Company:
     Microchip Technology Inc.
 
-  @File Name:
-    mcc.h
+  File Name:
+    main.c
 
-  @Summary:
-    This is the mcc.h file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+  Summary:
+    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
-  @Description:
+  Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.5
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.6
         Device            :  PIC18F26K83
         Driver Version    :  2.00
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 2.20 and above or later
-        MPLAB             :  MPLAB X 5.40
 */
 
 /*
@@ -44,63 +41,31 @@
     SOFTWARE.
 */
 
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "device_config.h"
-#include "pin_manager.h"
-#include <stdint.h>
-#include <stdbool.h>
-#include <conio.h>
-#include "interrupt_manager.h"
-#include "adcc.h"
-#include "uart2.h"
-#include "uart1.h"
-#include "ecan.h"
+#include "mcc_generated_files/mcc.h"
 
-
-
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the device to the default states configured in the
- *                  MCC GUI
- * @Example
-    SYSTEM_Initialize(void);
+/*
+                         Main application
  */
-void SYSTEM_Initialize(void);
+void main(void)
+{
+    // Initialize the device
+    SYSTEM_Initialize();
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the oscillator to the default states configured in the
- *                  MCC GUI
- * @Example
-    OSCILLATOR_Initialize(void);
- */
-void OSCILLATOR_Initialize(void);
+    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
+    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
+    // Use the following macros to:
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the PMD module to the default states configured in the
- *                  MCC GUI
- * @Example
-    PMD_Initialize(void);
- */
-void PMD_Initialize(void);
+    // Enable the Global Interrupts
+    //INTERRUPT_GlobalInterruptEnable();
 
+    // Disable the Global Interrupts
+    //INTERRUPT_GlobalInterruptDisable();
 
-#endif	/* MCC_H */
+    while (1)
+    {
+        // Add your application code
+    }
+}
 /**
  End of File
 */
